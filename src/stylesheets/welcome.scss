@@ -1,0 +1,51 @@
+// variables
+$heading-color: #444;
+$primary-color: #4f9c40;
+$highlight-color: #d13267;
+$text-color: #eeeded;
+
+.welcome-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+
+  padding: 10px;
+
+  p {
+    color: $text-color;
+    font-weight: bold;
+    letter-spacing: 0.3rem;
+    font-size: 1.3rem;
+    line-height: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    width: 80%;
+  }
+
+  h1 {
+    color: $text-color;
+    font-weight: bold;
+    letter-spacing: 0.3rem;
+    font-size: 3rem;
+    // border: solid 1px $text-color;
+    // border-radius: 5px;
+    // padding: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+
+.gym-logo {
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.welcome-container {
+  .btn {
+    margin: 10px;
+    padding: 12px;
+    font-size: 1.1rem;
+  }
+}

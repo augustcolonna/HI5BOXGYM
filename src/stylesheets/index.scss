@@ -1,0 +1,108 @@
+// variables
+$heading-color: #444;
+$primary-color: #4f9c40;
+$highlight-color: #d13267;
+$text-color: #eeeded;
+
+html,
+body,
+.App,
+:root {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  min-width: 100vw;
+  margin: 0;
+  padding: 0;
+  background-image: url('../assets/primary-background.svg');
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.page-heading {
+  font-size: 1.2rem;
+  color: $heading-color;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn {
+  background-color: $text-color;
+  color: $primary-color;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: all 500ms ease;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1px;
+  padding: 3px;
+
+  &:hover {
+    box-shadow: 0 0 12px $text-color;
+
+    cursor: pointer;
+  }
+}
+
+label {
+  display: block;
+  margin: 20px auto;
+}
+
+label span {
+  display: block;
+  margin-bottom: 6px;
+}
+
+input,
+textarea {
+  padding: 8px 6px;
+  font-size: 1em;
+  color: $text-color;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid $primary-color;
+  border-radius: 4px;
+  margin: 1px;
+}
+
+textarea {
+  min-height: 100px;
+}
+
+.error {
+  color: $highlight-color;
+  background: #eeeded;
+  border: 1px solid $highlight-color;
+  border-radius: 4px;
+  padding: 8px;
+  margin: 10px 0;
+}
