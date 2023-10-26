@@ -22,7 +22,7 @@ function Signup() {
     e.preventDefault();
     const createAddress = [streetAndNumber, cityAndCountry, postal];
     signUp(email, password, displayName, thumbnail, createAddress);
-    navigate('/signin');
+    navigate('/login');
   };
 
   const handleFileChange = (e) => {

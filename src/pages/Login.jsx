@@ -14,7 +14,7 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     login(email, password);
-    navigate('/');
+    navigate('/home');
   };
   return (
     <div className="auth-container">
