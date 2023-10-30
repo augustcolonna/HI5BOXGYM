@@ -1,0 +1,87 @@
+// variables
+$heading-color: #444;
+$primary-color: #4f9c40;
+$highlight-color: #d13267;
+$text-color: #eeeded;
+
+.activities {
+  width: 90%;
+  height: 60%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.activity {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .activity-icon {
+    width: 90px;
+    margin-bottom: 10px;
+  }
+
+  .activity-name {
+    color: $text-color;
+    font-weight: bold;
+  }
+}
+
+//floating navbar
+.floating-container {
+  position: absolute;
+  margin: 30px;
+  right: 0%;
+  bottom: 0%;
+  transition: all 500ms ease;
+
+  .menu-icon {
+    width: 40px;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: $text-color;
+    position: absolute;
+    right: 0%;
+    bottom: 0%;
+  }
+
+  .floating-nav {
+    background-color: rgba($color: $text-color, $alpha: 0.9);
+    border-radius: 20px;
+    padding: 10px;
+    width: 200px;
+    height: 500px;
+    position: fixed;
+    bottom: 14%;
+    right: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    ul {
+      line-height: 2rem;
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+
+    a {
+      text-decoration: none;
+      color: $primary-color;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+      .btn {
+        background-color: $primary-color;
+        color: $text-color;
+        padding: 10px;
+        width: 90%;
+      }
+    }
+  }
+}

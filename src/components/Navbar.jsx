@@ -1,11 +1,15 @@
 //hooks
 import { Link } from 'react-router-dom';
+
 //misc
 import FitnessLogo from '../assets/fitness.svg';
 import SynthetikeisLogo from '../assets/puck.svg';
 import FootballLogo from '../assets/soccer-ball.svg';
 import InfoLogo from '../assets/information.svg';
 // import ClimbingLogo from '../assets/karabiner.svg';
+
+//styles
+import '../stylesheets/navbar.scss';
 
 const allActivities = [
   { name: 'fitness', logo: FitnessLogo },

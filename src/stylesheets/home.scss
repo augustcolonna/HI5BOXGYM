@@ -39,33 +39,5 @@ $text-color: #eeeded;
         width: 300px;
       }
     }
-
-    .activities {
-      width: 90%;
-      height: 60%;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-gap: 30px;
-      border: 1px solid $text-color;
-      border-radius: 20px;
-      padding: 10px;
-    }
-
-    .activity {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-
-      .activity-icon {
-        width: 90px;
-        margin-bottom: 10px;
-      }
-
-      .activity-name {
-        color: $text-color;
-        font-weight: bold;
-      }
-    }
   }
 }
