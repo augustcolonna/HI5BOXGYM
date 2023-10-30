@@ -22,10 +22,6 @@ export const useLogin = () => {
           setError(null);
         }
         const updateLogIn = doc(db, 'users', userCredential.user.uid);
-        // const data = {
-        //   'online': true,
-        //   'displayName': userCredential.user.displayName,
-        // };
         updateDoc(updateLogIn, {
           online: true,
         });

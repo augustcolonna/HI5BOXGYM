@@ -1,0 +1,94 @@
+// variables
+$heading-color: #444;
+$primary-color: #4f9c40;
+$highlight-color: #d13267;
+$text-color: #eeeded;
+
+.auth-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .auth-form {
+    width: 80%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px rgba($color: $text-color, $alpha: 0.1);
+    padding: 20px;
+    border-radius: 20px;
+    background-color: rgba($color: $text-color, $alpha: 0.1);
+
+    h2 {
+      text-align: center;
+      font-size: 3rem;
+      color: $text-color;
+    }
+
+    .auth-form-label {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: $text-color;
+      font-size: 1.2rem;
+      font-weight: bold;
+      width: 90%;
+
+      span {
+        margin-bottom: 5px;
+      }
+
+      input {
+        height: 3rem;
+        text-align: center;
+        margin-left: 5px;
+        border-radius: 20px;
+        background-color: rgba($color: $text-color, $alpha: 0.4);
+      }
+
+      input[type='file'] {
+        text-align: center;
+        margin: 5px auto;
+        color: $text-color;
+      }
+
+      input[type='file']::file-selector-button {
+        border-radius: 5px;
+        background-color: $primary-color;
+        color: $text-color;
+        font-weight: 700;
+        padding: 5px;
+        margin-right: 10px;
+        border: none;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: $text-color;
+      margin-bottom: 10px;
+      font-style: italic;
+
+      p {
+        text-align: center;
+      }
+
+      span {
+        color: $text-color;
+        text-shadow: $text-color 0px 0px 10px;
+        font-weight: bold;
+      }
+    }
+
+    .btn {
+      margin-top: 10px;
+      width: 40%;
+      height: 60px;
+      border-radius: 20px;
+    }
+  }
+}
