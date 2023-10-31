@@ -8,7 +8,7 @@ import MenuIcon from '../assets/menu.svg';
 //styles
 import '../stylesheets/navbar.scss';
 
-const allRoutes = ['Fitness', 'Synthetikeis', 'Soccer', 'Climbing', 'Information'];
+const allRoutes = ['home', 'fitness', 'synthetikeis', 'soccer', 'information'];
 
 function FloatingNav() {
   const [toggleNav, setToggleNav] = useState(false);
@@ -18,18 +18,19 @@ function FloatingNav() {
   const handleToggle = () => {
     setToggleNav(!toggleNav);
   };
+
   return (
     <div className="floating-container">
       {toggleNav ? (
         <div className="floating-nav">
-          <Link to={`/profile/${user.uid}`}>
+          <Link onClick={handleToggle} to={`/profile/${user.uid}`}>
             <button className="btn">Your Profile</button>
           </Link>
           {allRoutes.map((route) => {
             return (
-              <ul className="routes" key={route.name}>
-                <Link to={`/${route.name}`}>
-                  <li>{route}</li>
+              <ul className="routes" key={route}>
+                <Link onClick={handleToggle} to={`/${route}`}>
+                  <li className="route">{route}</li>
                 </Link>
               </ul>
             );

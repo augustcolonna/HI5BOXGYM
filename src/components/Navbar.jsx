@@ -15,7 +15,6 @@ const allActivities = [
   { name: 'fitness', logo: FitnessLogo },
   { name: 'synthetikeis', logo: SynthetikeisLogo },
   { name: 'football', logo: FootballLogo },
-  //   { name: 'climbing', logo: ClimbingLogo },
   { name: 'information', logo: InfoLogo },
 ];
 

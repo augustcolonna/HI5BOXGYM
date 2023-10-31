@@ -6,9 +6,10 @@ import { useLogout } from '../hooks/useLogOut';
 import { useAuthContext } from '../hooks/useAuthContext';
 
 //components
-import Navbar from '../components/Navbar';
 
+import UpdateProfile from '../components/UpdateProfile';
 //styles
+import '../stylesheets/profile.scss';
 
 function Profile() {
   const { id } = useParams();
@@ -30,23 +31,37 @@ function Profile() {
     return <div className="loading">loading profile...</div>;
   }
   return (
-    <div className="profile-info">
-      <h2>Profile Information</h2>
-      <button className="btn" onClick={toggleUpdate}>
-        Update Profile Information
-      </button>
-      {user && !isPending && (
-        <button className="btn" onClick={logout}>
-          Logout
-        </button>
+    <div className="profile-info-container">
+      {!toggleUpdateProfile && (
+        <h2>
+          Profile Information <br></br>
+          <span>{user.displayName}</span>
+          <br></br>
+          <span>Membership: {document.membershipType.label}</span>
+        </h2>
       )}
-      {user && isPending && (
-        <button className="btn" disabled>
-          Logging Out...
-        </button>
+      {!toggleUpdateProfile && (
+        <div className="profile-image">
+          <img src={user.photoURL} />
+        </div>
       )}
-      <div>
-        <Navbar />
+      {toggleUpdateProfile && <UpdateProfile toggleUpdate={toggleUpdate} profile={document} />}
+      <div className="profile-btns">
+        {!toggleUpdateProfile && (
+          <button className="btn" onClick={toggleUpdate}>
+            Update Profile Information
+          </button>
+        )}
+        {user && !toggleUpdateProfile && !isPending && (
+          <button className="btn" onClick={logout}>
+            Logout
+          </button>
+        )}
+        {user && !toggleUpdateProfile && isPending && (
+          <button className="btn" disabled>
+            Logging Out...
+          </button>
+        )}
       </div>
     </div>
   );
