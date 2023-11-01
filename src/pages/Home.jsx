@@ -14,7 +14,7 @@ function Home() {
   return (
     <div className="home-container">
       <div className="app-links">
-        <img src={gymLogo} alt="gym logo" />
+        <img className="gym-logo" src={gymLogo} alt="gym logo" />
         <div className="profile">
           <Link to={`/profile/${user.uid}`}>
             <button className="btn">Your Profile</button>

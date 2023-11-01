@@ -124,3 +124,120 @@ $text-color: #eeeded;
     }
   }
 }
+
+@media only screen and (max-width: 480px) {
+  .activities {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px;
+    border-radius: 20px;
+    padding: 10px;
+    justify-content: center;
+  }
+
+  .activity {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+
+    .activity-icon {
+      width: 50%;
+      margin-bottom: 7px;
+      box-shadow: $text-color 0px 0px 10px;
+      padding: 7px;
+      border-radius: 50px;
+      transition: ease-out 200ms;
+
+      &:active {
+        transform: scale(1.2);
+        box-shadow: $text-color 0px 0px 20px;
+      }
+    }
+
+    .activity-name {
+      color: $text-color;
+      font-weight: bold;
+    }
+  }
+
+  //floating navbar
+  .floating-container {
+    position: fixed;
+    margin: 20px;
+    transition: all 500ms ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .menu-icon {
+      width: 30px;
+      padding: 13px;
+      border-radius: 15px;
+      background-color: $text-color;
+      box-shadow: $text-color 0px 0px 10px;
+      position: fixed;
+      bottom: 3%;
+      transition: ease-out 200ms;
+
+      &:active {
+        transform: scale(1.2);
+        box-shadow: $text-color 0px 0px 20px;
+      }
+    }
+
+    .floating-nav {
+      background-color: rgba($color: $text-color, $alpha: 0.9);
+      border-radius: 20px;
+      padding: 10px;
+      width: 90%;
+      bottom: 11%;
+      height: 300px;
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+
+      ul {
+        line-height: 2rem;
+        font-size: 1.3rem;
+        font-weight: bold;
+        width: 100%;
+      }
+
+      a {
+        text-decoration: none;
+        color: $primary-color;
+        width: 100%;
+        font-size: 1.7rem;
+        display: flex;
+        justify-content: center;
+
+        .btn {
+          background-color: $primary-color;
+          color: $text-color;
+          font-size: 2rem;
+          padding: 5px;
+          width: 95%;
+          height: 20px;
+        }
+
+        .route {
+          text-align: center;
+          width: 90%;
+          text-transform: capitalize;
+          transition: ease-out 200ms;
+
+          &:active {
+            background-color: rgba($color: $primary-color, $alpha: 0.3);
+            padding: 4px;
+            border-radius: 20px;
+          }
+        }
+      }
+    }
+  }
+}

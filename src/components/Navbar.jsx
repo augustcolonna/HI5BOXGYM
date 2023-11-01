@@ -12,10 +12,10 @@ import InfoLogo from '../assets/information.svg';
 import '../stylesheets/navbar.scss';
 
 const allActivities = [
-  { name: 'fitness', logo: FitnessLogo },
-  { name: 'synthetikeis', logo: SynthetikeisLogo },
-  { name: 'football', logo: FootballLogo },
-  { name: 'information', logo: InfoLogo },
+  { name: 'Fitness', logo: FitnessLogo },
+  { name: 'Hockey', logo: SynthetikeisLogo },
+  { name: 'Football', logo: FootballLogo },
+  { name: 'Info', logo: InfoLogo },
 ];
 
 function Activity() {
