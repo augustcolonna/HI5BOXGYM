@@ -41,28 +41,29 @@ function Profile() {
         </h2>
       )}
       {!toggleUpdateProfile && (
-        <div className="profile-image">
-          <img src={user.photoURL} />
+        <div className="profile-mid-container">
+          <div className="profile-image">
+            <img src={user.photoURL} />
+          </div>
+          <div className="profile-btns">
+            <button className="btn" onClick={toggleUpdate}>
+              Update Profile
+            </button>
+            {user && !toggleUpdateProfile && !isPending && (
+              <button className="btn" onClick={logout}>
+                Logout
+              </button>
+            )}
+            {user && !toggleUpdateProfile && isPending && (
+              <button className="btn" disabled>
+                Logging Out...
+              </button>
+            )}
+          </div>
         </div>
       )}
       {toggleUpdateProfile && <UpdateProfile toggleUpdate={toggleUpdate} profile={document} />}
-      <div className="profile-btns">
-        {!toggleUpdateProfile && (
-          <button className="btn" onClick={toggleUpdate}>
-            Update Profile Information
-          </button>
-        )}
-        {user && !toggleUpdateProfile && !isPending && (
-          <button className="btn" onClick={logout}>
-            Logout
-          </button>
-        )}
-        {user && !toggleUpdateProfile && isPending && (
-          <button className="btn" disabled>
-            Logging Out...
-          </button>
-        )}
-      </div>
+      {!toggleUpdateProfile && <div className="user-id-qrcode">{user.uid}</div>}
     </div>
   );
 }

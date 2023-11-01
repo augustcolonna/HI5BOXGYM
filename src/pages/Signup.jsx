@@ -74,7 +74,7 @@ function Signup() {
             value={displayName}
           />
         </label>
-        <label className="auth-form-label custom">
+        <label className="auth-form-label">
           <span>Profile Picture</span>
           <input type="file" onChange={handleFileChange} />
           {thumbnailError && <div className="error">{thumbnailError}</div>}

@@ -27,11 +27,17 @@ function Login() {
           <h2>Login</h2>
           <label className="auth-form-label">
             <span>Email</span>
-            <input required type="email" onChange={(e) => setEmail(e.target.value)} value={email} />
+            <input required type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} value={email} />
           </label>
           <label className="auth-form-label">
             <span>Password</span>
-            <input required type="password" onChange={(e) => setPassword(e.target.value)} value={password} />
+            <input
+              required
+              type="password"
+              placeholder="Password"
+              onChange={(e) => setPassword(e.target.value)}
+              value={password}
+            />
           </label>
           <Link to="/signup">
             <p>

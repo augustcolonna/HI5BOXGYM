@@ -71,8 +71,8 @@ function UpdateProfile({ profile, toggleUpdate }) {
 
   return (
     <div className="update-container">
+      <h2>Update Profile</h2>
       <form className="update-form" onSubmit={handleSubmit}>
-        <h2>Update Profile</h2>
         <label className="update-form-label">
           <p>Profile Picture</p>
           <img src={user.photoURL} />
@@ -83,7 +83,7 @@ function UpdateProfile({ profile, toggleUpdate }) {
           <p>Membership type</p>
           <Select onChange={(option) => setMemberShipType(option)} options={membershipCategories} />
         </label>
-        {!updatingProfile && <button className="btn">Save Changes</button>}
+        {!updatingProfile && <button className="btn">Save</button>}
         {updatingProfile && (
           <button className="btn" disabled>
             Updating...
@@ -91,7 +91,7 @@ function UpdateProfile({ profile, toggleUpdate }) {
         )}
       </form>
       <button className="btn" onClick={toggleUpdate}>
-        Done Updating
+        Done
       </button>
     </div>
   );

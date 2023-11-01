@@ -173,7 +173,7 @@ $text-color: #eeeded;
     align-items: center;
 
     .menu-icon {
-      width: 30px;
+      width: 20px;
       padding: 13px;
       border-radius: 15px;
       background-color: $text-color;
@@ -189,10 +189,11 @@ $text-color: #eeeded;
     }
 
     .floating-nav {
-      background-color: rgba($color: $text-color, $alpha: 0.9);
+      background-color: rgba($color: $primary-color, $alpha: 0.9);
       border-radius: 20px;
+      border: 3px solid $text-color;
       padding: 10px;
-      width: 90%;
+      width: 87%;
       bottom: 11%;
       height: 300px;
       position: fixed;
@@ -210,19 +211,20 @@ $text-color: #eeeded;
 
       a {
         text-decoration: none;
-        color: $primary-color;
+        color: $text-color;
         width: 100%;
         font-size: 1.7rem;
         display: flex;
         justify-content: center;
 
         .btn {
-          background-color: $primary-color;
-          color: $text-color;
-          font-size: 2rem;
-          padding: 5px;
-          width: 95%;
-          height: 20px;
+          background-color: $text-color;
+          color: $primary-color;
+          font-size: 1.7rem;
+          padding: 7px;
+          width: 100%;
+          height: 30px;
+          border-radius: 12px;
         }
 
         .route {
@@ -232,9 +234,10 @@ $text-color: #eeeded;
           transition: ease-out 200ms;
 
           &:active {
-            background-color: rgba($color: $primary-color, $alpha: 0.3);
+            background-color: rgba($color: $text-color, $alpha: 0.9);
+            color: $primary-color;
             padding: 4px;
-            border-radius: 20px;
+            border-radius: 12px;
           }
         }
       }
