@@ -6,6 +6,7 @@ import '../stylesheets/fitnessclass.scss';
 import FitnessSchedule from '../components/FitnessSchedule';
 //data
 import classData from '../utilities/scheduleData.json';
+//misc
 
 function FitnessClass() {
   // eslint-disable-next-line no-unused-vars
@@ -17,7 +18,6 @@ function FitnessClass() {
         {schedule.map((workout) => {
           return (
             <div className="day" key={workout._id}>
-              <h2>{workout.day}</h2>
               <FitnessSchedule schedule={workout} />
             </div>
           );

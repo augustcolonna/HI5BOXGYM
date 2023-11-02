@@ -8,13 +8,12 @@ $text-color: #eeeded;
   //fitness class PAGE
 
   .fitness-class-container {
-    height: 100vh;
-    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
     margin: 20px 0 20px 0;
+    height: 100%;
 
     .day-container {
       width: 100%;
@@ -22,8 +21,11 @@ $text-color: #eeeded;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      margin: 10px auto;
+
       .day {
         display: flex;
+        height: 50vh;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -31,12 +33,8 @@ $text-color: #eeeded;
         background-color: rgba($color: $text-color, $alpha: 0.2);
         padding: 5px;
         border-radius: 12px;
-        margin: 10px 0 10px 0;
+        margin: 5px 0 5px 0;
         width: 90%;
-
-        h2 {
-          color: $text-color;
-        }
       }
     }
 
@@ -46,29 +44,45 @@ $text-color: #eeeded;
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
 
-      .btn {
-        width: 50%;
+      h2 {
+        color: $text-color;
+        font-size: 2rem;
+        margin-bottom: 11px;
       }
 
       .class-details {
         display: flex;
         flex-direction: column;
+        justify-content: space-around;
         align-items: center;
-        justify-content: center;
+        width: 100%;
 
         .title-time-container {
           display: flex;
           flex-direction: column;
           align-items: center;
+          justify-content: center;
+          text-align: center;
           border: 1px solid $text-color;
           background-color: rgba($color: $text-color, $alpha: 0.2);
           padding: 5px;
           border-radius: 12px;
-          margin: 3px;
+          margin: 9px;
+          width: 90%;
 
           p {
             color: $text-color;
+            font-size: 1.5rem;
+          }
+
+          img {
+            width: 25px;
+            background-color: $text-color;
+            padding: 2px;
+            border-radius: 7px;
+            box-shadow: $text-color 0px 0px 5px 0px;
           }
         }
       }

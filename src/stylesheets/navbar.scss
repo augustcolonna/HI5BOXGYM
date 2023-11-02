@@ -179,7 +179,8 @@ $text-color: #eeeded;
       background-color: $text-color;
       box-shadow: $text-color 0px 0px 10px;
       position: fixed;
-      bottom: 3%;
+      bottom: 2%;
+      right: 6%;
       transition: ease-out 200ms;
 
       &:active {
