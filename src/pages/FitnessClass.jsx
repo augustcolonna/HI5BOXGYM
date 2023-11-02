@@ -8,18 +8,21 @@ import FitnessSchedule from '../components/FitnessSchedule';
 import classData from '../utilities/scheduleData.json';
 
 function FitnessClass() {
+  // eslint-disable-next-line no-unused-vars
   const [schedule, setSchedule] = useState(classData);
 
   return (
     <div className="fitness-class-container">
-      {schedule.map((workout) => {
-        return (
-          <div>
-            <h2 className="day">{workout.day}</h2>
-            <FitnessSchedule key={workout._id} schedule={workout} />
-          </div>
-        );
-      })}
+      <div className="day-container">
+        {schedule.map((workout) => {
+          return (
+            <div className="day" key={workout._id}>
+              <h2>{workout.day}</h2>
+              <FitnessSchedule schedule={workout} />
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }

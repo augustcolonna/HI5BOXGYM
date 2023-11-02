@@ -3,17 +3,16 @@
     "_id": "00",
     "day": "Monday",
     "workout": [
-      { "title": "Open WOD Basic", "time": "10:00 - 11:00" },
-      { "title": "Open WOD Beginner", "time": "18:00 - 19:00" },
-      { "title": "Open WOD Basic", "time": "19:15 - 20:15" }
+      { "title": "Open WOD Beginner", "time": "18:00 - 19:00", "_id": "00" },
+      { "title": "Open WOD Basic", "time": "19:15 - 20:15", "_id": "01" }
     ]
   },
   {
     "_id": "01",
     "day": "Tuesday",
     "workout": [
-      { "title": "Functional Bodybuilding", "time": "18:00 - 19:00" },
-      { "title": "Gymnastic & Bodyweight", "time": "19:15 - 20:15" }
+      { "title": "Open WOD Endurance", "time": "18:00 - 19:00", "_id": "02" },
+      { "title": "Gymnastic", "time": "19:15 - 20:15", "_id": "03" }
     ]
   },
 
@@ -21,26 +20,24 @@
     "_id": "02",
     "day": "Wednesday",
     "workout": [
-      { "title": "Open WOD Beginner", "time": "18:00 - 19:00" },
-      { "title": "Open WOD Beginner", "time": "18:00 - 19:00" },
-      { "title": "Open WOD Beginner", "time": "18:00 - 19:00" }
+      { "title": "Open WOD Beginner", "time": "18:00 - 19:00", "_id": "04" },
+      { "title": "Open WOD Basic", "time": "19:15 - 20:15", "_id": "05" }
     ]
   },
   {
     "_id": "03",
     "day": "Thursday",
     "workout": [
-      { "title": "Open WOD Endurance", "time": "18:00 - 19:00" },
-      { "title": "Open WOD Advanced", "time": "19:15 - 20:15" }
+      { "title": "Open WOD Team", "time": "18:00 - 19:00", "_id": "06" },
+      { "title": "Open WOD Endurance", "time": "19:15 - 20:15", "_id": "07" }
     ]
   },
   {
     "_id": "04",
     "day": "Friday",
     "workout": [
-      { "title": "Open WOD Basic", "time": "16:00 - 17:00" },
-      { "title": "Open WOD Basic", "time": "17:15 - 18:15" },
-      { "title": "Core & Recovery", "time": "19:00 - 19:30" }
+      { "title": "Open WOD Beginner", "time": "18:00 - 19:00", "_id": "08" },
+      { "title": "Open WOD Basic", "time": "19:15 - 20:15", "_id": "09" }
     ]
   }
 ]

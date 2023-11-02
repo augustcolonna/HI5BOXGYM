@@ -5,4 +5,73 @@ $highlight-color: #d13267;
 $text-color: #eeeded;
 
 @media only screen and (max-width: 480px) {
+  //fitness class PAGE
+
+  .fitness-class-container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin: 20px 0 20px 0;
+
+    .day-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .day {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid $text-color;
+        background-color: rgba($color: $text-color, $alpha: 0.2);
+        padding: 5px;
+        border-radius: 12px;
+        margin: 10px 0 10px 0;
+        width: 90%;
+
+        h2 {
+          color: $text-color;
+        }
+      }
+    }
+
+    //fitness class Schedule page
+    .fitness-class-schedule {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .btn {
+        width: 50%;
+      }
+
+      .class-details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .title-time-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          border: 1px solid $text-color;
+          background-color: rgba($color: $text-color, $alpha: 0.2);
+          padding: 5px;
+          border-radius: 12px;
+          margin: 3px;
+
+          p {
+            color: $text-color;
+          }
+        }
+      }
+    }
+  }
 }
