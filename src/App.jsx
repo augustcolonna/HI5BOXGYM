@@ -7,7 +7,7 @@ import Login from './pages/Login';
 import Home from './pages/Home';
 import Profile from './pages/Profile';
 import Information from './pages/Information';
-import FitnessClass from './pages/FitnessClass';
+
 //components
 import FloatingNav from './components/FloatingNav';
 //utilities
@@ -16,6 +16,8 @@ import FloatingNav from './components/FloatingNav';
 import { useAuthContext } from './hooks/useAuthContext';
 //styles
 import './stylesheets/index.scss';
+import CreateWorkout from './pages/CreateWorkout';
+import Ftiness from './pages/Ftiness';
 
 function App() {
   const { user, authIsReady } = useAuthContext();
@@ -30,7 +32,8 @@ function App() {
           <Route path="/home" element={!user ? <Navigate to="/" /> : <Home />} />
           <Route path="/profile/:id" element={!user ? <Navigate to="/" /> : <Profile />} />
           <Route path="/information" element={!user || (user && <Information />)} />
-          <Route path="/fitness" element={!user ? <Navigate to="/" /> : <FitnessClass />} />
+          <Route path="/create-workout" element={user ? <CreateWorkout /> : <Welcome />} />
+          <Route path="/fitness" element={!user ? <Navigate to="/" /> : <Ftiness />} />
         </Routes>
       )}
       {user && <FloatingNav />}
