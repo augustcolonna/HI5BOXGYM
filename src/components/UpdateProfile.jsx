@@ -19,7 +19,8 @@ const membershipCategories = [
   { value: 'other', label: 'Other' },
 ];
 
-function UpdateProfile({ profile, toggleUpdate }) {
+// eslint-disable-next-line react/prop-types
+function UpdateProfile({ toggleUpdate }) {
   const [thumbnail, setThumbnail] = useState(null);
   const [thumbnailError, setThumbnailError] = useState(null);
   const [membershipType, setMemberShipType] = useState('');
