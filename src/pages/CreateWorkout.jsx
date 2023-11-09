@@ -65,7 +65,7 @@ function CreateWorkout() {
       category: category.value,
       date: Timestamp.fromDate(new Date(date)),
       time: time.value,
-      comments: [],
+      signUpList: [],
       createdBy: createdBy,
       assignedCoachesList,
     });

@@ -1,10 +1,22 @@
+//hooks
+import { useDocument } from '../hooks/useDocument';
 //prop types
 import PropTypes from 'prop-types';
-//import images
-import addIcon from '../assets/add-user.svg';
-import removeIcon from '../assets/remove-user.svg';
+//components
+import ClassSignUp from './ClassSignUp';
 
 function WorkoutList({ workouts }) {
+  const id = workouts[0].id;
+  const { document, error } = useDocument('workouts', id);
+
+  if (error) {
+    return <p className="error">{error}</p>;
+  }
+
+  if (!document) {
+    return <div className="loading">loading documents...</div>;
+  }
+
   return (
     <div className="workout-card">
       {workouts.length === 0 ? (
@@ -25,14 +37,7 @@ function WorkoutList({ workouts }) {
                 <p className="time-and-date">{workout.date.toDate().toDateString()}</p>
                 <p className="time-and-date">{workout.time}</p>
               </div>
-              <div className="add-and-remove-class">
-                <button className="btn">
-                  <img src={addIcon} />
-                </button>
-                <button className="btn">
-                  <img src={removeIcon} />
-                </button>
-              </div>
+              <ClassSignUp workout={document} />
             </div>
           );
         })
