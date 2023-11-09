@@ -1,7 +1,9 @@
 //prop types
 import PropTypes from 'prop-types';
+//styles
+import '../stylesheets/fitness.scss';
 
-const filters = ['all', 'today'];
+const filters = ['all', 'today', 'mine'];
 
 function WorkoutFilter({ scheduleFilter, changeFilter }) {
   const handleClick = (newFilter) => {
@@ -10,20 +12,18 @@ function WorkoutFilter({ scheduleFilter, changeFilter }) {
 
   return (
     <div className="workout-filter">
-      <nav>
-        <p>Filter Workouts by </p>
-        {filters.map((filter) => {
-          return (
-            <button
-              key={filter}
-              className={scheduleFilter === filter ? 'active' : ''}
-              onClick={() => handleClick(filter)}
-            >
-              {filter}
-            </button>
-          );
-        })}
-      </nav>
+      <p>Filter </p>
+      {filters.map((filter) => {
+        return (
+          <button
+            key={filter}
+            className={scheduleFilter === filter ? 'active' : ''}
+            onClick={() => handleClick(filter)}
+          >
+            {filter}
+          </button>
+        );
+      })}
     </div>
   );
 }

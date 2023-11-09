@@ -1,5 +1,8 @@
 //prop types
 import PropTypes from 'prop-types';
+//import images
+import addIcon from '../assets/add-user.svg';
+import removeIcon from '../assets/remove-user.svg';
 
 function WorkoutList({ workouts }) {
   return (
@@ -9,13 +12,27 @@ function WorkoutList({ workouts }) {
       ) : (
         workouts.map((workout) => {
           return (
-            <div key={workout.id}>
-              <h2>{workout.category}</h2>
-              {workout.assignedCoachesList.map((coach) => {
-                return <p key={coach.id}>Coached by {coach.displayName} </p>;
-              })}
-              <p>{workout.date.toDate().toDateString()}</p>
-              <p>{workout.time}</p>
+            <div className="workout" key={workout.id}>
+              <div className="details">
+                <h2>{workout.category}</h2>
+                {workout.assignedCoachesList.map((coach) => {
+                  return (
+                    <p className="coach" key={coach.id}>
+                      Coach {coach.displayName}{' '}
+                    </p>
+                  );
+                })}
+                <p className="time-and-date">{workout.date.toDate().toDateString()}</p>
+                <p className="time-and-date">{workout.time}</p>
+              </div>
+              <div className="add-and-remove-class">
+                <button className="btn">
+                  <img src={addIcon} />
+                </button>
+                <button className="btn">
+                  <img src={removeIcon} />
+                </button>
+              </div>
             </div>
           );
         })

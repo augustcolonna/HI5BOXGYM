@@ -5,6 +5,9 @@ import { useState } from 'react';
 import Workouts from '../components/Workouts';
 import WorkoutFilter from '../components/WorkoutFilter';
 
+//styles
+import '../stylesheets/fitness.scss';
+
 function Ftiness() {
   const [scheduleFilter, setScheduleFilter] = useState('all');
   const { documents, error } = useCollection('workouts');
@@ -16,18 +19,28 @@ function Ftiness() {
   const filterByDay = documents
     ? documents.filter((document) => {
         switch (scheduleFilter) {
-          case 'all':
-            return true;
+          case 'all': {
+            let isCurrent = documents
+              .sort((a, b) => {
+                return b.date - a.date;
+              })
+              .filter((document) => {
+                let today = new Date().toLocaleDateString('de-DE');
+                if (document.date.toDate().toLocaleDateString('de-DE') >= today) {
+                  return document;
+                }
+              });
+
+            return isCurrent;
+          }
           case 'today': {
             let isToday = false;
             let today = new Date().toLocaleDateString('de-DE');
             if (today === document.date.toDate().toLocaleDateString('de-DE')) {
               isToday = true;
             }
-
             return isToday;
           }
-
           default:
             return true;
         }

@@ -3,15 +3,13 @@
 import PropTypes from 'prop-types';
 //componenents
 import WorkoutList from './WorkoutList';
+//styles
+import '../stylesheets/fitness.scss';
 
 function Workouts({ workouts }) {
   // const { user } = useAuthContext();
 
-  return (
-    <div className="list-all-workouts">
-      <div className="workouts">{workouts && <WorkoutList workouts={workouts} />}</div>
-    </div>
-  );
+  return <div className="workouts">{workouts && <WorkoutList workouts={workouts} />}</div>;
 }
 
 Workouts.propTypes = {
