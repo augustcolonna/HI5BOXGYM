@@ -30,10 +30,11 @@ function ClassSignUp({ workout }) {
   };
 
   const handleCancelClass = async (id) => {
+    const cancelUserId = user.uid;
     const docRef = doc(db, 'workouts', id);
     await updateDoc(docRef, {
       signUpList: workout.signUpList.filter((user) => {
-        return user.id !== user.uid;
+        return user.id !== cancelUserId;
       }),
     });
     navigate('/workouts');
@@ -43,11 +44,20 @@ function ClassSignUp({ workout }) {
     <div className="add-and-remove-class">
       <button onClick={handleAddClass} className="btn">
         <img src={addIcon} />
+        <p className="add">Sign Up</p>
       </button>
       <button onClick={handleCancelClass} className="btn">
         <img src={removeIcon} />
+        <p className="cancel">Cancel</p>
       </button>
-      {workout.signUpList.length > 0 ? <p>{workout.signUpList.length} signed up</p> : <p>No one has signed up yet</p>}
+      {workout.signUpList.length > 0 ? (
+        <p>
+          {workout.signUpList[0].displayName}, {workout.signUpList[1].displayName}, {workout.signUpList[2].displayName}{' '}
+          + {workout.signUpList.length - 3} more are going.
+        </p>
+      ) : (
+        <p>No one has signed up yet</p>
+      )}
     </div>
   );
 }
