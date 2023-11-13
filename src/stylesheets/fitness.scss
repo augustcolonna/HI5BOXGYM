@@ -59,75 +59,86 @@ $text-color: #eeeded;
       }
     }
 
-    .workouts {
+    .workout-list {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       width: 100%;
 
-      .workout-card {
+      a {
+        width: 85%;
+        height: 100;
+        color: $text-color;
+        border: solid 1px rgba($color: $text-color, $alpha: 0.1);
+        padding: 12px;
+        border-radius: 20px;
+        background-color: rgba($color: $text-color, $alpha: 0.1);
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        flex-direction: row;
         align-items: center;
+        justify-content: space-around;
         margin-bottom: 10px;
-        width: 100%;
-
-        p {
-          font-size: 1rem;
-          color: $text-color;
-          letter-spacing: 0.1rem;
-        }
 
         .workout {
-          border: solid 1px rgba($color: $text-color, $alpha: 0.1);
-          background-color: rgba($color: $text-color, $alpha: 0.1);
-          padding: 12px;
-          border-radius: 20px;
-          box-shadow: $text-color 0px 0px 3px;
-          margin: 10px 0 10px 0;
-          width: 80%;
-          display: flex;
-          justify-content: space-between;
+          width: 50%;
 
-          .details {
-            h2 {
-              font-size: 1rem;
-              color: $text-color;
-              text-transform: uppercase;
-              font-weight: bolder;
-              letter-spacing: 0.1rem;
-              border-bottom: 1px solid #eeeded80;
-            }
-            .coach {
-              font-size: 0.7rem;
-              color: $text-color;
-              letter-spacing: 0.1rem;
-            }
-
-            .time-and-date {
-              font-size: 1rem;
-              color: $text-color;
-              letter-spacing: 0.1rem;
-            }
+          h2 {
+            font-size: 1rem;
+            color: $text-color;
+            text-transform: uppercase;
+            font-weight: bolder;
+            letter-spacing: 0.1rem;
+            border-bottom: 1px solid #eeeded80;
+            margin-bottom: 5px;
           }
 
-          .add-and-remove-class {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-
-            .btn {
-              margin: 5px;
-              padding: 7px;
-            }
-
-            img {
-              width: 18px;
-            }
+          .time-and-date {
+            font-size: 0.9rem;
+            color: $text-color;
+            letter-spacing: 0.1rem;
           }
         }
+
+        .link-to-signup {
+          margin-left: 12px;
+          height: 90%;
+          width: 25%;
+          border: solid 1px rgba($color: $text-color, $alpha: 0.1);
+          background-color: rgba($color: $text-color, $alpha: 0.1);
+          box-shadow: 0px 0px 10px rgba($color: $text-color, $alpha: 0.7);
+          border-radius: 50px;
+          padding: 5px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+        }
+      }
+    }
+  }
+  .workout-card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    //workoutCard styling
+
+    //ClasssignUp styling
+    .add-and-remove-class {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .btn {
+        margin: 5px;
+        padding: 7px;
+      }
+
+      img {
+        width: 18px;
       }
     }
   }

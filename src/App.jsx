@@ -7,7 +7,7 @@ import Login from './pages/Login';
 import Home from './pages/Home';
 import Profile from './pages/Profile';
 import Information from './pages/Information';
-
+import Workout from './pages/Workout';
 //components
 import FloatingNav from './components/FloatingNav';
 //utilities
@@ -34,6 +34,7 @@ function App() {
           <Route path="/information" element={!user || (user && <Information />)} />
           <Route path="/create-workout" element={user ? <CreateWorkout /> : <Welcome />} />
           <Route path="/fitness" element={!user ? <Navigate to="/" /> : <Ftiness />} />
+          <Route path="/fitness/:id" element={!user ? <Navigate to="/" /> : <Workout />} />
         </Routes>
       )}
       {user && <FloatingNav />}

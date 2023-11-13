@@ -2,7 +2,7 @@
 import { useCollection } from '../hooks/useCollection';
 import { useState } from 'react';
 //components
-import Workouts from '../components/Workouts';
+import WorkoutList from '../components/WorkoutList';
 import WorkoutFilter from '../components/WorkoutFilter';
 
 //styles
@@ -51,7 +51,7 @@ function Ftiness() {
     <div className="fitness-container">
       {error && <p>{error}</p>}
       {documents && <WorkoutFilter changeFilter={changeFilter} scheduleFilter={scheduleFilter} />}
-      {filterByDay && <Workouts workouts={filterByDay} />}
+      {filterByDay && <WorkoutList workouts={filterByDay} />}
     </div>
   );
 }
