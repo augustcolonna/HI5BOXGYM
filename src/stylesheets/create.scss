@@ -1,0 +1,102 @@
+// variables
+$heading-color: #444;
+$primary-color: #4f9c40;
+$highlight-color: #d13267;
+$text-color: #eeeded;
+
+.create-workout-form {
+  height: 80%;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: rgba($color: $text-color, $alpha: 0.1);
+  border-radius: 12px;
+  border: solid 1px rgba($color: $text-color, $alpha: 0.1);
+
+  h2 {
+    color: $text-color;
+    border-bottom: solid 1px rgba($color: $text-color, $alpha: 0.4);
+  }
+
+  .create-form {
+    width: 100%;
+    max-width: 500px;
+
+    label > span {
+      color: $text-color;
+      font-weight: bold;
+      letter-spacing: 0.1rem;
+    }
+
+    label > input {
+      border-radius: 10px;
+      border: solid 1px rgba($color: $text-color, $alpha: 0.1);
+      padding: 10px;
+      width: 100%;
+      background-color: #eeeded80;
+      color: $text-color;
+
+      &:active {
+        box-shadow: #eeeded 0px 0px 10px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .create-workout-form {
+    height: 80%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba($color: $text-color, $alpha: 0.1);
+    border-radius: 12px;
+    border: solid 1px rgba($color: $text-color, $alpha: 0.1);
+
+    h2 {
+      color: $text-color;
+      border-bottom: solid 1px rgba($color: $text-color, $alpha: 0.4);
+    }
+
+    .create-form {
+      width: 100%;
+
+      label > span {
+        color: $text-color;
+        font-weight: bold;
+        letter-spacing: 0.1rem;
+      }
+
+      label > input {
+        border-radius: 10px;
+        border: solid 1px rgba($color: $text-color, $alpha: 0.1);
+        padding: 10px;
+        width: 100%;
+        background-color: #eeeded80;
+        color: $text-color;
+
+        &:active {
+          box-shadow: #eeeded 0px 0px 10px;
+        }
+      }
+      .create-form-button {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .btn {
+          width: 70%;
+          height: 60px;
+          box-shadow: #eeeded 0px 0px 10px;
+        }
+      }
+    }
+  }
+}
