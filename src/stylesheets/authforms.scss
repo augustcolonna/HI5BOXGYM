@@ -23,10 +23,58 @@ $text-color: #eeeded;
     border-radius: 20px;
     background-color: rgba($color: $text-color, $alpha: 0.1);
 
+    .warning {
+      display: flex;
+      border: solid 3px rgba($color: red, $alpha: 0.1);
+      background-color: rgba($color: red, $alpha: 0.1);
+      padding: 2px;
+      border-radius: 12px;
+
+      justify-content: center;
+      align-items: center;
+
+      p {
+        color: #ff6174;
+        font-size: 0.9rem;
+        font-weight: bold;
+        padding-right: 10px;
+      }
+
+      img {
+        width: 7%;
+      }
+    }
+
+    .match {
+      display: flex;
+      border: solid 3px rgba($color: $text-color, $alpha: 0.1);
+      background-color: rgba($color: $text-color, $alpha: 0.1);
+      padding: 2px;
+      border-radius: 12px;
+      justify-content: center;
+      align-items: center;
+
+      p {
+        color: $text-color;
+        font-size: 0.9rem;
+        font-weight: bold;
+        padding-right: 10px;
+      }
+
+      img {
+        width: 7%;
+      }
+    }
+
     h2 {
       text-align: center;
-      font-size: 3rem;
+      font-size: 2rem;
       color: $text-color;
+      border: 3px solid rgba($color: $text-color, $alpha: 0.1);
+      background-color: rgba($color: $text-color, $alpha: 0.1);
+      padding: 9px;
+      border-radius: 10px;
+      margin-bottom: 9px;
     }
 
     .auth-form-label {
@@ -50,13 +98,13 @@ $text-color: #eeeded;
         background-color: rgba($color: $text-color, $alpha: 0.4);
       }
 
-      input[type='file'] {
+      input[type="file"] {
         text-align: center;
         margin: 5px auto;
         color: $text-color;
       }
 
-      input[type='file']::file-selector-button {
+      input[type="file"]::file-selector-button {
         border-radius: 5px;
         background-color: $primary-color;
         color: $text-color;
@@ -109,18 +157,62 @@ $text-color: #eeeded;
       justify-content: center;
       align-items: center;
       border: solid 1px rgba($color: $text-color, $alpha: 0.1);
-      padding: 20px;
+      padding: 10px;
       border-radius: 20px;
       background-color: rgba($color: $text-color, $alpha: 0.1);
 
       h2 {
         text-align: center;
-        font-size: clamp(2rem, 3rem, 3rem);
+        font-size: 1.5rem;
         color: $text-color;
         border: 3px solid rgba($color: $text-color, $alpha: 0.1);
         background-color: rgba($color: $text-color, $alpha: 0.1);
         padding: 9px;
         border-radius: 10px;
+        margin-bottom: 9px;
+      }
+
+      .warning {
+        display: flex;
+        border: solid 3px rgba($color: red, $alpha: 0.1);
+        background-color: rgba($color: red, $alpha: 0.1);
+        padding: 2px;
+        border-radius: 12px;
+
+        justify-content: center;
+        align-items: center;
+
+        p {
+          color: #ff6174;
+          font-size: 0.9rem;
+          font-weight: bold;
+          padding-right: 10px;
+        }
+
+        img {
+          width: 7%;
+        }
+      }
+
+      .match {
+        display: flex;
+        border: solid 3px rgba($color: $text-color, $alpha: 0.1);
+        background-color: rgba($color: $text-color, $alpha: 0.1);
+        padding: 2px;
+        border-radius: 12px;
+        justify-content: center;
+        align-items: center;
+
+        p {
+          color: $text-color;
+          font-size: 0.9rem;
+          font-weight: bold;
+          padding-right: 10px;
+        }
+
+        img {
+          width: 7%;
+        }
       }
 
       .auth-form-label {
@@ -131,7 +223,7 @@ $text-color: #eeeded;
         font-size: 1.2rem;
         font-weight: bold;
         width: 100%;
-        margin: 12px;
+        margin: 3px;
 
         span {
           margin-bottom: 5px;
@@ -148,7 +240,7 @@ $text-color: #eeeded;
           width: 100%;
         }
 
-        input[type='file'] {
+        input[type="file"] {
           text-align: center;
           margin: 5px auto;
           color: $text-color;
@@ -157,7 +249,7 @@ $text-color: #eeeded;
           font-size: 0.9rem;
         }
 
-        input[type='file']::file-selector-button {
+        input[type="file"]::file-selector-button {
           color: $text-color;
           font-weight: 700;
           font-size: 0.9rem;
