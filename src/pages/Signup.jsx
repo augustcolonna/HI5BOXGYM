@@ -111,14 +111,12 @@ function Signup() {
           <input type="file" onChange={handleFileChange} />
           {thumbnailError && <div className="error">{thumbnailError}</div>}
         </label>
-
         <Link to="/login">
           <p>
             Already have an account? <span>Login here</span> or{" "}
             <span>continue as guest</span>
           </p>
         </Link>
-
         {!isPending && (
           <button
             disabled={checkPassword === password ? false : true}

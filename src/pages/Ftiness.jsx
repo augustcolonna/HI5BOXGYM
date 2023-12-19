@@ -74,7 +74,7 @@ function Ftiness() {
           scheduleFilter={scheduleFilter}
         />
       )}
-
+        
       <Link to="/create-workout" className="create-workout-link">
         <button className="btn">Create New Workout</button>
       </Link>
