@@ -21,15 +21,13 @@ function Ftiness() {
     ? documents.filter((document) => {
         switch (scheduleFilter) {
           case "all": {
-            if (
-              document.date.toDate().toLocaleDateString() <
-              new Date().toLocaleDateString()
-            ) {
-              return !document;
+            if (document.date.toDate() <= new Date()) {
+              return document;
             }
             let isCurrent = documents.sort((a, b) => {
               return b.date - a.date;
             });
+
             return isCurrent;
           }
           case "today": {
@@ -74,7 +72,7 @@ function Ftiness() {
           scheduleFilter={scheduleFilter}
         />
       )}
-        
+
       <Link to="/create-workout" className="create-workout-link">
         <button className="btn">Create New Workout</button>
       </Link>

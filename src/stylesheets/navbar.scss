@@ -24,7 +24,7 @@ $text-color: #eeeded;
   .activity-icon {
     width: 90px;
     margin-bottom: 10px;
-    box-shadow: $text-color 0px 0px 10px;
+
     padding: 10px;
     border-radius: 50px;
     transition: ease-out 200ms;
@@ -146,7 +146,7 @@ $text-color: #eeeded;
     .activity-icon {
       width: 50%;
       margin-bottom: 7px;
-      box-shadow: $text-color 0px 0px 10px;
+
       padding: 7px;
       border-radius: 50px;
       transition: ease-out 200ms;
@@ -190,7 +190,7 @@ $text-color: #eeeded;
     }
 
     .floating-nav {
-      background-image: url('../assets/primary-background.svg');
+      background-image: url("../assets/primary-background.svg");
       border-radius: 20px;
       border: 1px solid $text-color;
       padding: 10px;

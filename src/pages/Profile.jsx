@@ -1,19 +1,19 @@
 //hooks
-import { useParams } from 'react-router-dom';
-import { useDocument } from '../hooks/useDocument';
-import { useState } from 'react';
-import { useLogout } from '../hooks/useLogOut';
-import { useAuthContext } from '../hooks/useAuthContext';
+import { useParams } from "react-router-dom";
+import { useDocument } from "../hooks/useDocument";
+import { useState } from "react";
+import { useLogout } from "../hooks/useLogOut";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 //components
 
-import UpdateProfile from '../components/UpdateProfile';
+import UpdateProfile from "../components/UpdateProfile";
 //styles
-import '../stylesheets/profile.scss';
+import "../stylesheets/profile.scss";
 
 function Profile() {
   const { id } = useParams();
-  const { document, error } = useDocument('users', id);
+  const { document, error } = useDocument("users", id);
   const { logout, isPending } = useLogout();
   const { user } = useAuthContext();
 
@@ -37,7 +37,9 @@ function Profile() {
           Profile Information <br></br>
           <span>{user.displayName}</span>
           <br></br>
-          <span>Membership: {document.membershipType.label}</span>
+          {document.membershipType ? (
+            <span>Membership: {document.membershipType.label}</span>
+          ) : null}
         </h2>
       )}
       {!toggleUpdateProfile && (
@@ -62,7 +64,9 @@ function Profile() {
           </div>
         </div>
       )}
-      {toggleUpdateProfile && <UpdateProfile toggleUpdate={toggleUpdate} profile={document} />}
+      {toggleUpdateProfile && (
+        <UpdateProfile toggleUpdate={toggleUpdate} profile={document} />
+      )}
       {!toggleUpdateProfile && <div className="user-id-qrcode">{user.uid}</div>}
     </div>
   );

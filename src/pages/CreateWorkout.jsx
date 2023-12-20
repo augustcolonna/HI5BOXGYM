@@ -1,48 +1,53 @@
 //hooks and react components
-import { useEffect, useState } from 'react';
-import { useCollection } from '../hooks/useCollection';
-import { useAuthContext } from '../hooks/useAuthContext';
-import { useNavigate } from 'react-router-dom';
-import Select from 'react-select';
+import { useEffect, useState } from "react";
+import { useCollection } from "../hooks/useCollection";
+import { useAuthContext } from "../hooks/useAuthContext";
+import { useNavigate } from "react-router-dom";
+import Select from "react-select";
 //styles
-import '../stylesheets/create.scss';
+import "../stylesheets/create.scss";
 //firebase functions
-import { Timestamp } from 'firebase/firestore';
-import { addDoc, collection } from 'firebase/firestore';
-import { db } from '../firebase/firebaseconfig';
+import { Timestamp } from "firebase/firestore";
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "../firebase/firebaseconfig";
 
 const workouts = [
-  { value: 'Open Wod Basic', label: 'Open Wod Basic' },
-  { value: 'Open Wod Beginner', label: 'Open Wod Beginner' },
-  { value: 'Open WOD Endurance', label: 'Open WOD Endurance' },
-  { value: 'Open WOD Team', label: 'Open WOD Team' },
-  { value: 'Gymnastics', label: 'Gymnastics' },
+  { value: "Open Wod Basic", label: "Open Wod Basic" },
+  { value: "Open Wod Beginner", label: "Open Wod Beginner" },
+  { value: "Open WOD Endurance", label: "Open WOD Endurance" },
+  { value: "Open WOD Team", label: "Open WOD Team" },
+  { value: "Gymnastics & WOD", label: "Gymnastics & WOD" },
+  { value: "Core & Mobility", label: "Core & Mobility" },
+  { value: "Barbell & WOD", label: "Barbell & WOD" },
 ];
 
 const times = [
-  { value: '18:00 - 19:00', label: '18:00 - 19:00' },
-  { value: '19:15 - 20:15', label: '19:15 - 20:15' },
+  { value: "10:00 - 11:00", label: "10:00 - 11:00" },
+  { value: "11:00 - 12:00", label: "11:00 - 12:00" },
+  { value: "17:30 - 16:30", label: "17:30 - 16:30" },
+  { value: "18:00 - 19:00", label: "18:00 - 19:00" },
+  { value: "19:15 - 20:15", label: "19:15 - 20:15" },
 ];
 
 const customStyles = {
   control: (base, state) => ({
     ...base,
-    background: '#eeeded80',
-    textColor: '#eeeded',
-    borderRadius: state.isFocused ? '12px' : '12px',
-    borderColor: state.isFocused ? '#eeeded80' : '#4f9c40',
-    boxShadow: state.isFocused ? '#eeeded 0px 0px 10px' : null,
+    background: "#eeeded80",
+    textColor: "#eeeded",
+    borderRadius: state.isFocused ? "12px" : "12px",
+    borderColor: state.isFocused ? "#eeeded80" : "#4f9c40",
+    boxShadow: state.isFocused ? "#eeeded 0px 0px 10px" : null,
     placeholder: (defaultStyles) => {
       return {
         ...defaultStyles,
-        color: '#eeeded',
+        color: "#eeeded",
       };
     },
   }),
   menu: (base) => ({
     ...base,
-    borderRadius: '12px',
-    background: '#eeeded',
+    borderRadius: "12px",
+    background: "#eeeded",
     marginTop: 0,
   }),
   menuList: (base) => ({
@@ -52,15 +57,15 @@ const customStyles = {
 };
 
 function CreateWorkout() {
-  const [date, setDate] = useState('');
-  const [time, setTime] = useState('');
-  const [category, setCategory] = useState('');
-  const [assignedCoaches, setAssignedCoaches] = useState('');
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
+  const [category, setCategory] = useState("");
+  const [assignedCoaches, setAssignedCoaches] = useState("");
   const [formError, setFormError] = useState(null);
   const [coaches, setCoaches] = useState([]);
 
   const { user } = useAuthContext();
-  const { documents } = useCollection('users');
+  const { documents } = useCollection("users");
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -68,11 +73,11 @@ function CreateWorkout() {
     setFormError(null);
 
     if (!category) {
-      setFormError('Please select a Workout');
+      setFormError("Please select a Workout");
       return;
     }
     if (assignedCoaches.length < 1) {
-      setFormError('Please assign the Workout to at least one Coach');
+      setFormError("Please assign the Workout to at least one Coach");
       return;
     }
 
@@ -88,7 +93,7 @@ function CreateWorkout() {
       };
     });
 
-    await addDoc(collection(db, 'workouts'), {
+    await addDoc(collection(db, "workouts"), {
       category: category.value,
       date: Timestamp.fromDate(new Date(date)),
       time: time.value,
@@ -97,7 +102,7 @@ function CreateWorkout() {
       assignedCoachesList,
     });
 
-    navigate('/home');
+    navigate("/home");
   };
 
   useEffect(() => {
@@ -118,7 +123,7 @@ function CreateWorkout() {
         <label>
           <span>Workout</span>
           <Select
-            placeholder={'Choose a Workout'}
+            placeholder={"Choose a Workout"}
             styles={customStyles}
             onChange={(option) => setCategory(option)}
             options={workouts}
@@ -127,7 +132,7 @@ function CreateWorkout() {
         <label>
           <span>Workout Time</span>
           <Select
-            placeholder={'Choose a Time'}
+            placeholder={"Choose a Time"}
             styles={customStyles}
             onChange={(option) => setTime(option)}
             options={times}
@@ -135,12 +140,17 @@ function CreateWorkout() {
         </label>
         <label>
           <span>Workout Date</span>
-          <input required type="date" onChange={(e) => setDate(e.target.value)} value={date}></input>
+          <input
+            required
+            type="date"
+            onChange={(e) => setDate(e.target.value)}
+            value={date}
+          ></input>
         </label>
         <label>
           <span>Coach</span>
           <Select
-            placeholder={'Choose a Coach'}
+            placeholder={"Choose a Coach"}
             styles={customStyles}
             onChange={(option) => setAssignedCoaches(option)}
             options={coaches}

@@ -1,21 +1,21 @@
 //hooks
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 //misc
-import FitnessLogo from '../assets/fitness.svg';
-import SynthetikeisLogo from '../assets/puck.svg';
-import FootballLogo from '../assets/soccer-ball.svg';
-import InfoLogo from '../assets/information.svg';
+import FitnessLogo from "../assets/fitness.svg";
+import SynthetikeisLogo from "../assets/puck.svg";
+import FootballLogo from "../assets/soccer-ball.svg";
+import InfoLogo from "../assets/information.svg";
 // import ClimbingLogo from '../assets/karabiner.svg';
 
 //styles
-import '../stylesheets/navbar.scss';
+import "../stylesheets/navbar.scss";
 
 const allActivities = [
-  { name: 'fitness', logo: FitnessLogo },
-  { name: 'hockey', logo: SynthetikeisLogo },
-  { name: 'football', logo: FootballLogo },
-  { name: 'info', logo: InfoLogo },
+  { name: "fitness", logo: FitnessLogo },
+  { name: "hockey", logo: SynthetikeisLogo },
+  { name: "football", logo: FootballLogo },
+  { name: "information", logo: InfoLogo },
 ];
 
 function Activity() {
@@ -25,7 +25,11 @@ function Activity() {
         return (
           <Link to={`/${activity.name}`} key={activity.name}>
             <div className="activity">
-              <img className="activity-icon" src={activity.logo} alt={activity.name} />
+              <img
+                className="activity-icon"
+                src={activity.logo}
+                alt={activity.name}
+              />
               <p className="activity-name">{activity.name.toUpperCase()}</p>
             </div>
           </Link>
