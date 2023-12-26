@@ -8,6 +8,7 @@ import { useAuthContext } from "../hooks/useAuthContext";
 //components
 
 import UpdateProfile from "../components/UpdateProfile";
+import defaultIcon from "../assets/deafaultuser.svg";
 //styles
 import "../stylesheets/profile.scss";
 
@@ -45,7 +46,11 @@ function Profile() {
       {!toggleUpdateProfile && (
         <div className="profile-mid-container">
           <div className="profile-image">
-            <img src={user.photoURL} />
+            {user.photoURL ? (
+              <img src={user.photoURL} />
+            ) : (
+              <img src={defaultIcon} />
+            )}
           </div>
           <div className="profile-btns">
             <button className="btn" onClick={toggleUpdate}>

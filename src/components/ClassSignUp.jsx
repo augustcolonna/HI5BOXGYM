@@ -1,7 +1,7 @@
 //import hooks
 import { useAuthContext } from "../hooks/useAuthContext";
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 //firebase imports
 import { Timestamp, doc, updateDoc } from "firebase/firestore";
 import { db } from "../firebase/firebaseconfig";
@@ -42,7 +42,11 @@ function ClassSignUp({ workout }) {
 
   return (
     <div className="add-and-remove-class">
-      <button onClick={handleAddClass} className="btn">
+      <button
+        disabled={workout.signUpList}
+        onClick={handleAddClass}
+        className="btn"
+      >
         <img src={addIcon} />
         <p className="add">Sign Up</p>
       </button>

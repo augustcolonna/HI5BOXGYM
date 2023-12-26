@@ -6,6 +6,8 @@ import { useAuthContext } from "../hooks/useAuthContext";
 import WorkoutList from "../components/WorkoutList";
 import WorkoutFilter from "../components/WorkoutFilter";
 import { Link } from "react-router-dom";
+//images
+import kursPlan from "../assets/kursplan.png";
 //styles
 import "../stylesheets/fitness.scss";
 
@@ -21,14 +23,7 @@ function Ftiness() {
     ? documents.filter((document) => {
         switch (scheduleFilter) {
           case "all": {
-            if (document.date.toDate() <= new Date()) {
-              return document;
-            }
-            let isCurrent = documents.sort((a, b) => {
-              return b.date - a.date;
-            });
-
-            return isCurrent;
+            return <img src={kursPlan} />;
           }
           case "today": {
             if (
